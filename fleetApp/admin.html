@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
+    <style>
+        #container {
+          display: flex;
+          gap: 20px;
+
+        }
+        #sidebar{
+            width: 25%;
+            padding: 10;
+            border: 1px solid black;
+        }
+        #main{
+            width: 70%;
+            display: grid;
+            grid-template-columns: repeat(3,1fr);
+            gap: 10px;
+
+        }
+        .card{
+            border: 1px solid black;
+            padding: 10px;
+        }
+    
+    </style>
+</head>
+<body>
+    <h2>Fleet Management Dashboard</h2>
+    <div id="navbar">
+        <select id ="filterCategory">
+            <option value="All">All</option>
+            <option value="Auto">Auto</option>
+            <option value="Car">Car</option>
+            <option value="Truck">Truck</option>
+            <option value="bus">Bus</option>
+            </select>
+            
+            <select id ="filterAvailability">
+                <option value="All">All</option>
+                <option value="Available">Available</option>
+                <option value="UnAvailable">UnAvailable</option>
+            </select>
+
+            <button onclick="clearFilter()">clearFilter</button>
+            </div>
+            <br>
+
+            <div id="container">
+                <!--siderbar-->
+                <div id="siderbar">
+                    <h3>Add Fleet</h3>
+                    <input type="text" id="reg"placeholder="Reg No"/>
+                    <br><br>
+                    <select id="category">
+                        <option value="">Select Category</option>
+                        <option value="Auto">Auto</option>
+                        <option value="Car">Car</option>
+                        <option value="Truck">Truck</option>
+                        <option value="Bus">Bus</option>
+                    </select>
+                    <br><br>
+                    <input  type="text"id="driver"placeholder="Driver Name "/>
+                    <br><br>
+                  <select id ="Availability">
+                <option value="All">All</option>
+                <option value="Available">Available</option>
+                <option value="UnAvailable">UnAvailable</option>
+            </select>
+            <button onclick="addFleet()">Add Fleet</button>
+            </div>
+
+            <div id="main"></div>
+            </div>
+            <script>
+              let  vehicles = [];
+              function addFleet()
+              {
+              let reg =document.getElementById("reg").value;
+              let cat =document.getElementById("category").value;
+              let driv =document.getElementById("driver").value;
+              let avail =document.getElementById("available").value;
+              if (!reg || !cat|| !driv){
+                alert("Requrired fields cannot be empty")
+                return;
+              }
+              let obj ={reg,cat ,avail};
+              vehicles.push(obj);
+              display(vehicles);
+              clearAddForm();
+              }
+              function clearAddForm(){
+                document.getElementById("reg".value)
+                document.getElementById("category").value;
+              document.getElementById("driver").value;
+              document.getElementById("available").value;
+              } 
+              function
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            </script>
+
+
+
+
+
+</body>
+</html>
