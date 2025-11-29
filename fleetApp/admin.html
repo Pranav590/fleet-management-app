@@ -99,7 +99,30 @@
               document.getElementById("driver").value;
               document.getElementById("available").value;
               } 
-              function
+              function updateDriveer(index){
+                let newname = prompt("Enter new driver name:");
+                if (newNAME === ""|| newNAME === NULL){
+                    alert("Driver name cannot be empty")
+                    return;
+                }
+                vehicals[index].driv = newname;
+                display(vehicles)
+              }
+              function changAvailability(index){
+                
+                if (vehicles[index].avail===Available){
+                    vehicles[index].avail= "Unavailable";
+                    
+                }else{
+                    vehicles[index].avail===Available
+
+                }
+                
+                display(vehicles)
+              }
+Document.getElementById("filterCategory").addEventListener("change, filterData");
+
+Document.getElementById("filterAvailabity").addEventListener("change, filterData");
 
 
 
